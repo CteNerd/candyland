@@ -1,12 +1,37 @@
-# Getting Started with Create React App
+# Roddy's CandyLand Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created to mimic Hasbro's CandyLand game for the purpose of demonstrating technical skills. Please note that this application is not intended to replace the actual game. It only includes the card drawing functionality and does not involve moving pieces across a game board.
 
-## Available Scripts
+## Getting Started
+
+To get started with this project, follow the instructions below to download the repository to your local system and run the application.
+
+### Prerequisites
+
+Make sure you have the following installed on your system:
+- Node.js (https://nodejs.org/)
+- npm (https://www.npmjs.com/)
+
+### Installation
+
+1. Clone the repository to your local system using the following command:
+   ```
+   git clone https://github.com/your-username/candyland-game.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd candyland-game
+   ```
+3. Install the required dependencies:
+   ```
+   npm install
+   ```
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +39,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +54,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 

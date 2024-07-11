@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+thead, tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+tr {
+    display: flex;
+    width: 100%;
+}
+
+th, td {
+    flex: 1;
+    text-align: center;
+}
