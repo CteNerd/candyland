@@ -2,6 +2,10 @@
 
 This project was created to mimic Hasbro's CandyLand game for the purpose of demonstrating technical skills. Please note that this application is not intended to replace the actual game. It only includes the card drawing functionality and does not involve moving pieces across a game board.
 
+## Build Status
+
+![Build Status](https://github.com/CteNerd/candyland/actions/workflows/webpack.yml/badge.svg)
+
 ## How to Play
 
 1. **Add Players**: Start by adding players. You can add up to a maximum of 4 players.
