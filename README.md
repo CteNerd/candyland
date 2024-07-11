@@ -2,6 +2,13 @@
 
 This project was created to mimic Hasbro's CandyLand game for the purpose of demonstrating technical skills. Please note that this application is not intended to replace the actual game. It only includes the card drawing functionality and does not involve moving pieces across a game board.
 
+## How to Play
+
+1. **Add Players**: Start by adding players. You can add up to a maximum of 4 players.
+2. **Start Game**: Once all players are added, hit the "Start Game" button.
+3. **Draw Cards**: Players will take turns in order to draw cards. The current player's name will be displayed on the draw button, so if you leave and forget whose turn it is, no worries, the name is on the button. 😊
+
+
 ## Getting Started
 
 To get started with this project, follow the instructions below to download the repository to your local system and run the application.
