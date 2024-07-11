@@ -1,3 +1,4 @@
+import React from 'react';
 import { Pawn } from "../types/pawn";
 import "./playersTable.css";
 
