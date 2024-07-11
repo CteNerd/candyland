@@ -1,0 +1,14 @@
+p {
+    justify-content: center;
+    text-align: center;
+    width: 75%;
+}
+
+.button-container {
+    width: 50%;
+}
+
+button {
+    justify-content: center;
+    text-align: center;
+}
