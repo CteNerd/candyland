@@ -22,6 +22,14 @@ export interface BoardTile {
   jumpToIndex?: number;        // Teleport destination
   skipTurns?: number;          // Number of turns to skip
   isFinish?: boolean;          // Marks the final tile
+  // v2.1 layout hints for winding path
+  row?: number;                // Row position for layout
+  col?: number;                // Column position for layout
+  offsetX?: number;            // Horizontal offset in pixels
+  offsetY?: number;            // Vertical offset in pixels
+  // v2.1 special tile enhancements
+  emphasize?: boolean;         // Make this tile stand out (landmarks)
+  landmarkArt?: string;        // Emoji or art for landmark tiles
 }
 
 export interface Card {
