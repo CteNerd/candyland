@@ -1,82 +1,172 @@
-# Roddy's CandyLand Game
+# Candyland Web Game
 
-This project was created to mimic Hasbro's CandyLand game for the purpose of demonstrating technical skills. Please note that this application is not intended to replace the actual game. It only includes the card drawing functionality and does not involve moving pieces across a game board.
+A browser-based implementation of a Candyland-style board game built with React, TypeScript, and Vite. This game supports 2-4 players in local pass-and-play mode with full accessibility features including dark mode and colorblind mode.
+
+## Features
+
+- ✨ **Local Multiplayer**: 2-4 players taking turns on the same device
+- 🎨 **Accessibility**: Dark/light themes and colorblind mode with icons
+- 🎯 **Three Difficulty Levels**: Easy, Medium, and Hard (coming soon)
+- 🎮 **Classic Gameplay**: Draw cards, move pawns, reach the finish first
+- 📱 **Responsive Design**: Works on desktop, tablet, and mobile
+- 🚀 **Fast & Modern**: Built with Vite for instant hot reload
 
 ## Build Status
 
 ![Build Status](https://github.com/CteNerd/candyland/actions/workflows/webpack.yml/badge.svg)
 
+## Live Demo
+
+Play the game at: https://ctenerd.github.io/candyland/
+
 ## How to Play
 
-1. **Add Players**: Start by adding players. You can add up to a maximum of 4 players.
-2. **Start Game**: Once all players are added, hit the "Start Game" button.
-3. **Draw Cards**: Players will take turns in order to draw cards. The current player's name will be displayed on the draw button, so if you leave and forget whose turn it is, no worries, the name is on the button. 😊
+1. **Setup**: Choose the number of players (2-4), enter names, and select pawn colors
+2. **Select Difficulty**: Choose Easy or Medium mode
+3. **Game Options**: Toggle dark mode or colorblind mode as needed
+4. **Start Game**: Players take turns drawing cards to move their pawns
+5. **Win**: First player to reach the finish tile wins!
 
+### Game Rules
 
-## Getting Started
+- Draw a card on your turn
+- Single color cards move you to the next tile of that color
+- Double color cards move you to the second-next tile of that color
+- Special cards teleport you to named locations
+- Some tiles make you skip your next turn
+- First to the finish wins!
 
-To get started with this project, follow the instructions below to download the repository to your local system and run the application.
+## Development
 
 ### Prerequisites
 
-Make sure you have the following installed on your system:
-- Node.js (https://nodejs.org/)
-- npm (https://www.npmjs.com/)
+- Node.js 20+ (https://nodejs.org/)
+- npm (comes with Node.js)
 
 ### Installation
 
-1. Clone the repository to your local system using the following command:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/CteNerd/candyland.git
+   cd candyland
    ```
-   git clone https://github.com/your-username/candyland-game.git
-   ```
-2. Navigate to the project directory:
-   ```
-   cd candyland-game
-   ```
-3. Install the required dependencies:
-   ```
+
+2. Install dependencies:
+   ```bash
    npm install
    ```
 
 ### Available Scripts
 
-In the project directory, you can run:
+#### `npm run dev`
 
-#### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode with hot reload.
+Open [http://localhost:5173/candyland/](http://localhost:5173/candyland/) to view it in the browser.
 
 #### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `dist` folder.
+The build is optimized and minified for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### `npm run preview`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Previews the production build locally.
 
-#### `npm run eject`
+### Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+candyland/
+├── engine/              # Pure TypeScript game logic (no React)
+│   ├── types.ts         # Type definitions
+│   ├── deck.ts          # Deck management
+│   ├── rules.ts         # Turn resolution logic
+│   ├── reducer.ts       # Game state reducer
+│   └── boardPresets/    # Board configurations
+│       ├── easy.ts
+│       ├── medium.ts
+│       └── hard.ts
+├── src/
+│   ├── components/      # React components
+│   │   └── game/        # Game-specific components
+│   ├── context/         # React context providers
+│   ├── screens/         # Main screen components
+│   ├── App.tsx          # Main app component
+│   └── main.tsx         # Entry point
+├── index.html           # HTML template
+├── vite.config.ts       # Vite configuration
+└── tailwind.config.js   # Tailwind CSS configuration
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment to GitHub Pages
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The game automatically deploys to GitHub Pages when changes are pushed to the `main` branch.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Manual Deployment
+
+You can also deploy manually using:
+
+```bash
+npm run build
+npm run deploy
+```
+
+### Configuration
+
+The game is configured to deploy to GitHub Pages with:
+- Base path: `/candyland/`
+- Hash-based routing for proper navigation
+- Static asset optimization
+
+## Technical Details
+
+### Tech Stack
+
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite 5
+- **Styling**: Tailwind CSS 3
+- **Routing**: React Router 6 (hash-based)
+- **State Management**: React Context + useReducer
+
+### Game Engine Architecture
+
+The game logic is separated into the `/engine` folder with pure TypeScript code (no React dependencies). This allows:
+- Easy testing of game logic
+- Potential reuse in a backend for online multiplayer
+- Clear separation of concerns
+
+Key modules:
+- **types.ts**: All TypeScript interfaces and types
+- **deck.ts**: Card creation, shuffling, and drawing
+- **rules.ts**: Movement, tile effects, win conditions
+- **reducer.ts**: State management following the algorithm in SPEC.md
+- **boardPresets/**: Predefined board layouts for each difficulty
+
+### Accessibility Features
+
+- **Theme Support**: Light and dark modes
+- **Colorblind Mode**: Icons and labels added to colors
+- **Keyboard Navigation**: Full keyboard support
+- **Responsive**: Works on all screen sizes
+
+## Future Enhancements
+
+- 🌐 Online multiplayer support
+- 🎲 Hard mode with procedurally generated boards
+- 💾 Save/resume game functionality
+- 🎵 Sound effects and music
+- 📊 Game statistics and achievements
+
+## Contributing
+
+This is a demonstration project. Feel free to fork and modify for your own use.
+
+## License
+
+This project is for demonstration purposes. The Candyland game concept is owned by Hasbro. This implementation is not affiliated with or endorsed by Hasbro.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [SPEC.md](SPEC.md) - Full technical specification
+- [React Documentation](https://reactjs.org/)
+- [Vite Documentation](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
